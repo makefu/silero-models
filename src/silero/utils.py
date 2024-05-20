@@ -118,7 +118,7 @@ def init_jit_model(model_url: str,
                    device: torch.device = torch.device('cpu')):
     torch.set_grad_enabled(False)
 
-    model_dir = os.path.join(os.path.dirname(__file__), "model")
+    model_dir = os.path.join(os.path.expanduser("~/.local/silero"), "model")
     os.makedirs(model_dir, exist_ok=True)
     model_path = os.path.join(model_dir, os.path.basename(model_url))
 
